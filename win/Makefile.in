@@ -82,7 +82,7 @@ LDFLAGS =
 # Configuration for Fortran interface
 
 !ifdef fortran
-FC = ifort
+FC = ifx
 CFLAGS = $(CFLAGS) -DUSE_FORTRAN
 FFLAGS = $(USER_FFLAGS) \
        -c -O3 -fpp -Qansi_alias -DZERO_ORIGIN=1 -I../include -I../src/fortran/amg -w 
@@ -94,9 +94,9 @@ FFLAGS = $(FFLAGS) -MT
 !endif
 
 !ifdef impi
-FC = mpiifort
+FC = mpiifx
 FFLAGS = $(FFLAGS) -DUSE_MPI
-LINKER = mpiifort
+LINKER = mpiifx
 LDFLAGS =
 !endif
 !endif
